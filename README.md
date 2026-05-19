@@ -145,9 +145,7 @@ $$\tilde{p}_i = (1 - \alpha)\, p_i^{(0)} \;+\; \alpha\, w_i$$
 
 Коэффициент восстанавливается из смешанной вероятности с сохранением оверраунда:
 
-$$k_i^{\text{new}} = \max\!\left(1.01,\; \text{round}\!\left(\frac{1}{\tilde{p}_i \cdot R},\; 2\right)\right)
-
-$$
+$$k_i^{\text{new}} = \max\!\left(1.01,\; \text{round}\!\left(\frac{1}{\tilde{p}_i \cdot R},\; 2\right)\right)$$
 
 Нижняя граница $1.01$ защищает от технически некорректных коэффициентов.
 
@@ -181,5 +179,3 @@ $$k_{П1}^{\text{new}} = \frac{1}{0.5094 \times 1.0625} \approx 1.85$$
 2. Запустить Apache и MySQL в XAMPP
 3. Открыть `http://localhost/BK_RakhovRI/setup.php` — создаст БД и тестовые данные
 4. Войти: `admin@bk.test` / `password`
-#   B K _ R A K H O V R I  
- 
