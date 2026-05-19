@@ -1,0 +1,51 @@
+/* ============================================================
+   pages.css — Page-specific component classes
+   ============================================================ */
+
+/* ---- Odds / Score inline values ---- */
+.odds-value  { font-weight: 700; color: var(--accent);  }
+.score-value { font-weight: 700; color: var(--warning); margin-left: .5rem; }
+
+/* Odds update inline form (bookmaker/event_edit) */
+.odds-form { display: flex; gap: .4rem; align-items: center; }
+
+/* ---- Bet history cards (user/bets.php) ---- */
+.bet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: .85rem;
+}
+
+.bet-number      { font-weight: 600; font-size: .95rem; }
+.bet-header-meta { text-align: right; font-size: .85rem; color: var(--text-2); }
+
+/* Individual bet item row */
+.bet-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .45rem .6rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  margin-bottom: .4rem;
+  gap: .75rem;
+}
+.bet-item-info      { flex: 1; min-width: 0; }
+.bet-item-event     { font-size: .75rem; color: var(--text-3); }
+.bet-item-name      { font-size: .88rem; font-weight: 600; }
+.bet-item-side      { display: flex; align-items: center; gap: .6rem; white-space: nowrap; }
+.bet-item-odds-val  { font-weight: 700; color: var(--accent); }
+
+/* Bet totals footer row */
+.bet-totals {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: .75rem;
+  flex-wrap: wrap;
+  font-size: .875rem;
+}
+.bet-total-val { font-weight: 600; }
+.bet-total-win { font-weight: 600; color: var(--accent); }

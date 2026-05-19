@@ -1,0 +1,52 @@
+/* ============================================================
+   base.css — Reset + CSS Custom Properties + Base
+   ============================================================ */
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+a  { color: inherit; text-decoration: none; }
+
+/* ---- Design tokens ---- */
+:root {
+  --bg-page    : #0d0f1a;
+  --bg-surface : #151828;
+  --bg-card    : #1b1f33;
+  --bg-hover   : #222743;
+
+  --accent     : #00c896;
+  --accent-dk  : #00a87e;
+  --accent-lt  : #33dba9;
+
+  --danger     : #e05260;
+  --warning    : #f0a500;
+  --success    : #3dd68c;
+  --info       : #4ca9ff;
+
+  --text-1     : #e8eaf6;
+  --text-2     : #9aa0bb;
+  --text-3     : #5c6280;
+
+  --border     : #252a42;
+  --border-lt  : #2e3455;
+
+  --radius     : 8px;
+  --radius-sm  : 4px;
+  --shadow     : 0 2px 12px rgba(0,0,0,.4);
+
+  --font       : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-mono  : 'Consolas', monospace;
+}
+
+/* ---- Base ---- */
+html { font-size: 15px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--text-1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}

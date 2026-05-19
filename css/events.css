@@ -1,0 +1,152 @@
+/* ============================================================
+   events.css — Events list, outcomes, bet slip
+   ============================================================ */
+
+/* ---- Events grid ---- */
+.events-grid { display: grid; gap: 1rem; }
+
+/* ---- Event card ---- */
+.event-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: border-color .15s;
+}
+.event-card:hover      { border-color: var(--border-lt); }
+.event-card.is-live    { border-left: 3px solid var(--danger); }
+
+.event-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .75rem;
+  gap: .75rem;
+}
+
+.event-teams {
+  font-size: 1rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.event-score {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--warning);
+  min-width: 60px;
+  text-align: center;
+}
+
+.event-meta {
+  font-size: .78rem;
+  color: var(--text-3);
+  margin-bottom: .85rem;
+}
+
+.event-markets { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* ---- Market block ---- */
+.market-block { margin-bottom: .85rem; }
+
+.market-name {
+  font-size: .78rem;
+  color: var(--text-2);
+  margin-bottom: .4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+/* ---- Outcome buttons ---- */
+.outcomes-row { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+.outcome-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-lt);
+  border-radius: var(--radius-sm);
+  color: var(--text-1);
+  padding: .45rem .8rem;
+  cursor: pointer;
+  font-size: .85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .1rem;
+  transition: background .12s, border-color .12s;
+  min-width: 72px;
+}
+.outcome-btn:hover             { background: var(--bg-hover); border-color: var(--accent); }
+.outcome-btn.selected          { background: rgba(0,200,150,.15); border-color: var(--accent); color: var(--accent); }
+.outcome-btn.suspended         { opacity: .4; cursor: not-allowed; }
+
+.outcome-name { font-size: .72rem; color: var(--text-2); }
+.outcome-odds { font-size: 1rem; font-weight: 700; color: var(--accent); }
+.outcome-btn.selected .outcome-odds { color: var(--accent-lt); }
+
+/* ---- Bet Slip ---- */
+.bet-slip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  position: sticky;
+  top: 70px;
+}
+
+.bet-slip-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bet-slip-items { margin-bottom: 1rem; }
+
+.slip-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .6rem .8rem;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+}
+.slip-item-info    { flex: 1; min-width: 0; }
+.slip-item-event   { font-size: .75rem; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.slip-item-outcome { font-size: .875rem; font-weight: 600; }
+.slip-item-odds    { font-size: .9rem; font-weight: 700; color: var(--accent); white-space: nowrap; margin-left: auto; }
+
+.slip-remove-btn {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 .2rem;
+  transition: color .12s;
+}
+.slip-remove-btn:hover { color: var(--danger); }
+
+.slip-total-odds {
+  font-size: .85rem;
+  color: var(--text-2);
+  margin-bottom: .5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slip-potential {
+  font-size: .9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--accent);
+}
+
+.slip-empty { text-align: center; color: var(--text-3); font-size: .875rem; padding: 1rem 0; }

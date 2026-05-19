@@ -1,0 +1,26 @@
+# Apache / XAMPP configuration for BK_RakhovRI
+
+# --- Charset ---
+AddDefaultCharset UTF-8
+
+# --- Disable directory listing ---
+Options -Indexes
+
+# --- Protect sensitive files from direct browser access ---
+<FilesMatch "^(config|db|auth|bootstrap)\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# --- After setup: also protect setup.php ---
+# Uncomment the block below after running setup.php:
+# <Files "setup.php">
+#     Order allow,deny
+#     Deny from all
+# </Files>
+
+# --- Pretty URLs (optional, for future use) ---
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^ index.php [QSA,L]

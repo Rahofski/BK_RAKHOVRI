@@ -1,0 +1,211 @@
+/* ============================================================
+   layout.css — Structural layout, grid variants, utilities
+   ============================================================ */
+
+/* ---- Container ---- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---- Header ---- */
+.site-header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.site-nav a {
+  color: var(--text-2);
+  font-size: .875rem;
+  padding: .25rem .5rem;
+  border-radius: var(--radius-sm);
+  transition: color .15s, background .15s;
+  white-space: nowrap;
+}
+.site-nav a:hover { color: var(--text-1); background: var(--bg-hover); }
+
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-lt);
+  margin: 0 .25rem;
+}
+
+.nav-user {
+  font-size: .875rem;
+  color: var(--text-2);
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+/* ---- Main / Footer ---- */
+.site-main {
+  flex: 1;
+  padding: 2rem 0 3rem;
+}
+
+.site-footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--text-3);
+}
+
+/* ---- Page titles ---- */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-1);
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: var(--text-2);
+  margin-top: -.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Two-col grid ---- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+.two-col--equal { grid-template-columns: 1fr 1fr; }
+.two-col--320   { grid-template-columns: 1fr 320px; }
+.two-col--340   { grid-template-columns: 1fr 340px; }
+.two-col--360   { grid-template-columns: 1fr 360px; }
+
+@media (max-width: 900px) {
+  .two-col,
+  .two-col--equal,
+  .two-col--320,
+  .two-col--340,
+  .two-col--360 { grid-template-columns: 1fr; }
+}
+
+/* ---- Stats grid ---- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+.stats-grid--half { grid-template-columns: 1fr 1fr; }
+.stats-grid--half.mb-0 { margin-bottom: 0; }
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+}
+.stat-card--danger  { border-color: rgba(224,82,96,.25); }
+.stat-card--warning { border-color: rgba(240,165,0,.3);  }
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: .35rem;
+}
+.stat-value--danger  { color: var(--danger);  }
+.stat-value--warning { color: var(--warning); }
+
+.stat-label {
+  font-size: .78rem;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* ---- Filters bar ---- */
+.filters-bar {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+.filters-bar .form-group { margin-bottom: 0; }
+.filters-bar--compact   { padding: .75rem; }
+
+.filters-bar-action { margin-top: 1.4rem; }
+.filters-bar-count  { font-size: .85rem; margin-top: 1.6rem; color: var(--text-2); }
+
+/* ---- Flex helpers ---- */
+.flex         { display: flex; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-gap     { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+.flex-1       { flex: 1; }
+.flex-1-min0  { flex: 1; min-width: 0; }
+.gap-sm       { gap: .5rem; }
+
+/* ---- Spacing ---- */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: .5rem;  }
+.mt-2 { margin-top: 1rem;   }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem;   }
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: .5rem;  }
+.mb-2 { margin-bottom: 1rem;   }
+.mb-3 { margin-bottom: 1.5rem; }
+
+/* ---- Typography utilities ---- */
+.text-accent   { color: var(--accent);   }
+.text-danger   { color: var(--danger);   }
+.text-warning  { color: var(--warning);  }
+.text-success  { color: var(--success);  }
+.text-muted    { color: var(--text-2);   }
+.text-right    { text-align: right;      }
+.text-center   { text-align: center;     }
+.text-xs       { font-size: .78rem;      }
+.text-sm       { font-size: .875rem;     }
+
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.nowrap { white-space: nowrap; }
+.d-none { display: none;      }
